@@ -26,9 +26,9 @@ set -e
 
 echo "  DOWNLOAD AND INSTALL PLUGIN "
 
-     curl  -k -Lbk -m 55532 -m 555104 https://raw.githubusercontent.com/emil237/cccam/main/cccam-all-images_2.3.9_all.ipk
+     wget "$MY_URL/$MY_IPK"
   wait
-     curl  -k -Lbk -m 55532 -m 555104 https://raw.githubusercontent.com/emil237/cccam/main/cccam-all-images_2.3.9_all.deb
+     wget "$MY_URL/$MY_DEB"
 
  if which dpkg > /dev/null 2>&1; then
 	dpkg -i --force-overwrite $MY_DEB; apt-get install -f -y
@@ -55,8 +55,6 @@ echo "**************************************************************************
 wait
 killall -9 enigma2
 exit 0
-
-
 
 
 
